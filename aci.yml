@@ -1,0 +1,51 @@
+apiVersion: 2019-12-01
+location: 'southeast asia'
+name: d-sci
+type: Microsoft.ContainerInstance/containerGroups
+properties:
+  restartPolicy: Always
+  imageRegistryCredentials:
+    - server: index.docker.io
+      username: oadtz
+      password: e7ab74c8-f136-4ec9-a1b7-112178dcdbfa
+  containers:
+  - name: strapi
+    properties:
+      image: oadtz/dsci-backend:latest
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 0.5
+      ports:
+      - protocol: tcp
+        port: 1337
+  - name: frontend
+    properties:
+      image: oadtz/dsci-frontend:latest
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 0.5
+      ports:
+      - protocol: tcp
+        port: 80
+      volumeMounts:
+      - name: letsencrypt
+        mountPath: /mnt/letsencrypt
+        readOnly: false
+  osType: Linux
+  ipAddress:
+    type: Public
+    dnsNameLabel: d-sci
+    ports:
+    - protocol: tcp
+      port: 1337
+    - protocol: tcp
+      port: 80
+  volumes:
+    - name: letsencrypt
+      azureFile:
+        shareName: letsencrypt
+        readOnly: false
+        storageAccountName: oadtzstorage
+        storageAccountKey: 5xA2/RmoUqXmXO7w/vmypPyi+Z6gNjBHBXu2BfDhh1iQt8ETVBnAr1DZLx9YEGURDowV1C6dCQOr3Nmar5pVgg==
