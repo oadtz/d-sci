@@ -1,4 +1,4 @@
 module.exports = {
-    siteUrl: 'http://localhost:3000',
+    siteUrl: 'http://d-sci.southeastasia.azurecontainer.io',
     generateRobotsTxt: true,
   }

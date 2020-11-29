@@ -23,13 +23,13 @@ RUN npm run build
 
 # Setup services
 RUN rm /etc/nginx/conf.d/default.conf
-ADD ./docker/www.conf /etc/nginx/conf.d/www.conf
-ADD ./docker/ssl.conf /etc/nginx/conf.d/ssl.conf.bak
+ADD ./www.conf /etc/nginx/conf.d/www.conf
+ADD ./ssl.conf /etc/nginx/conf.d/ssl.conf.bak
 
 EXPOSE 80
 EXPOSE 443
 
-RUN chmod +x ./docker/start.sh
-RUN chmod +x ./docker/convert-cert.sh
+RUN chmod +x ./start.sh
+RUN chmod +x ./convert-cert.sh
 # Launch app with 
 CMD ["./start.sh"]
