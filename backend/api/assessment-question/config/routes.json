@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/assessment-questions",
+      "handler": "assessment-question.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/assessment-questions/count",
+      "handler": "assessment-question.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/assessment-questions/:id",
+      "handler": "assessment-question.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-questions",
+      "handler": "assessment-question.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/assessment-questions/:id",
+      "handler": "assessment-question.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/assessment-questions/:id",
+      "handler": "assessment-question.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

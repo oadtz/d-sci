@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_answer_answer_weights",
+  "info": {
+    "name": "ScoredAnswer",
+    "icon": "adjust",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    },
+    "Score": {
+      "type": "decimal"
+    }
+  }
+}

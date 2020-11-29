@@ -8,7 +8,7 @@ COPY ./ ./
 RUN rm -rf node_modules
 RUN npm install
 
-RUN npm run build
+RUN NODE_ENV=production npm run build
 
 EXPOSE 1337
 

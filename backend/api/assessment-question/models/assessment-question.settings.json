@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assessment_questions",
+  "info": {
+    "name": "Assessment Question",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Logic",
+        "Psychometric",
+        "Personality"
+      ],
+      "required": true
+    },
+    "Question": {
+      "type": "richtext",
+      "required": true
+    },
+    "Answers": {
+      "type": "dynamiczone",
+      "components": [
+        "answer.asessment-answer",
+        "answer.answer-weight"
+      ],
+      "required": true
+    },
+    "TimeLimitInSecond": {
+      "type": "biginteger",
+      "min": "1"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "SingleChoice",
+        "MultipleChoice"
+      ],
+      "required": true,
+      "default": "SingleChoice"
+    },
+    "DifficultyLevel": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "max": 9,
+      "min": 0
+    }
+  }
+}
