@@ -1,8 +1,35 @@
 version: "3"
 services:
-  mongodb:
-    image: mongo:3.6
-    volumes:
-      - ./data/db:/data/db
+  backend:
+    image: node:12
+    volumes: 
+      - ./backend:/usr/app
+    ports: 
+      - 81:1337
+    command: 
+      - bash
+      - -c
+      - |
+        cd /usr/app
+        NODE_ENV=production npm run build
+        NODE_ENV=production npm start
+  admin:
+    image: node:12
+    volumes: 
+      - ./backend:/usr/app
+    ports: 
+      - 1337:1337
+    command: 
+      - bash
+      - -c
+      - |
+        cd /usr/app
+        npm run dev
+  mongo:
+    image: oadtz/mongo
     ports:
       - 27017:27017
+  # behappynerd:
+  #   image: oadtz/behappynerd:latest
+  #   ports:
+  #     - 80:80

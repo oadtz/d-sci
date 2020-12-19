@@ -7,11 +7,12 @@
   },
   "options": {},
   "attributes": {
-    "Text": {
-      "type": "string"
-    },
     "Score": {
       "type": "decimal"
+    },
+    "Text": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

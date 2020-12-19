@@ -37,7 +37,9 @@
       "min": "1"
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "Type": {
       "type": "enumeration",
@@ -54,6 +56,9 @@
       "required": true,
       "max": 9,
       "min": 0
+    },
+    "prerequisite_question": {
+      "model": "assessment-question"
     }
   }
 }
