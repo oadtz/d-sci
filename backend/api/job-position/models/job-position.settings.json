@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_positions",
+  "info": {
+    "name": "Job Position",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Requirements": {
+      "type": "text"
+    },
+    "SalaryRange": {
+      "type": "component",
+      "repeatable": false,
+      "component": "salary-range.salary-range"
+    },
+    "Level": {
+      "type": "string"
+    },
+    "MinYearsExperience": {
+      "type": "integer"
+    },
+    "Qualifications": {
+      "type": "text"
+    },
+    "CompanyName": {
+      "type": "string"
+    },
+    "PostedDate": {
+      "type": "datetime"
+    }
+  }
+}

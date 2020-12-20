@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_salary_range_salary_ranges",
+  "info": {
+    "name": "SalaryRange",
+    "icon": "comment-dollar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "From": {
+      "type": "decimal"
+    },
+    "To": {
+      "type": "decimal"
+    }
+  }
+}

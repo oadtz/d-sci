@@ -57,7 +57,7 @@
       "max": 9,
       "min": 0
     },
-    "prerequisite_question": {
+    "PrerequisiteQuestion": {
       "model": "assessment-question"
     }
   }
